@@ -7,8 +7,54 @@ void yyerror(char *);
 
 %}
 
+CARACTER [^\"]
+DIGITO [0-9]
+
 
 %%
+
+(["]{CARACTER}*["]) {
+    return STRING;
+}
+
+{DIGITO}+ {
+    return NUMERO;
+}
+
+[(true)|(false)] {
+    return BOOLEANO;
+}
+
+(null) {
+    return NULO;
+}
+
+\[ {
+    return ACOLCHETE;
+}
+
+\] {
+    return FCOLCHETE;
+}
+
+[,] {
+    return VIRGULA;
+}
+
+[{] {
+    return ACHAVE;
+}
+
+[}] {
+    return FCHAVE;
+}
+
+[:] {
+    return PONTOS;
+}
+
+[[:space:]]+ ;
+[[:^space:]]+ ;
 
 
 
