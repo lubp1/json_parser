@@ -20,7 +20,7 @@ PROGRAMA:
 OBJETOIN:
         OBJETOIN VIRGULA OBJETOIN { }
         |
-        STRING PONTOS VALOR { printf("a"); }
+        STRING PONTOS VALOR { }
         ;
 
 OBJETO:
@@ -28,9 +28,9 @@ OBJETO:
         ;
 
 VALOR:
-        STRING { printf("b");}
+        STRING { }
         |
-        NUMERO { printf("b");}
+        NUMERO { }
         |
         OBJETO { }
         |

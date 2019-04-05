@@ -17,7 +17,7 @@ DIGITO [0-9]
     return STRING;
 }
 
-{DIGITO}+ {
+{DIGITO}+([.]{DIGITO}+)? {
     return NUMERO;
 }
 
@@ -54,7 +54,7 @@ DIGITO [0-9]
 }
 
 [[:space:]]+ ;
-[[:^space:]]+ ;
+[[:^space:]] ;
 
 
 
